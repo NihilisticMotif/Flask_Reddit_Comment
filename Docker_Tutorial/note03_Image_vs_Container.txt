@@ -1,0 +1,17 @@
+Question: What is Dockerfile, Image and container?
+
+1. Dockerfile
+ * It is the file that tell that Docker should do.
+ * Dockerfile build an Image by `build` command.
+2. DockerRegistry 
+ * It store Dockerfile in hub.docker.com 
+ * You can download it by `pull`.
+ * You can upload your Dockerfile by `push`
+3. Image
+ * It is the template for building the Docker container by `run` command.
+ * Image can create multiple containers.
+4. Container 
+ * Container can be `Start` or `stop`.
+
+Reference
+* https://youtu.be/wYE3d7PE_Mc?si=H0TyDmk1cn1Puihc

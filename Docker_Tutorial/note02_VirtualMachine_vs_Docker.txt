@@ -1,0 +1,19 @@
+Question: Virtual Machine vs Docker 
+
+There are 3 layers in compuer
+1. Hardware (CPU,RAM etc.)
+2. OS Kernel
+3. Software 
+
+The OS Kernel is based on OS (operating system), and it is used for
+make enable the software to interact with the hardware.
+
+Virtual Machine virtualize OS Kernal and Software, which make the user to 
+run different OS and Software in different computer and/or different platform.
+
+On the other hands, Docker virtualize only software and utilize the OS Kernal of
+the host, which make Docker faster and useless memory than Virtual Machine,
+but the weakness of Docker is that it cannot be used with non-Linux (MacOS and Window) OS platform.
+
+The good news is Docker Desktop (it use Hypervisor layer) can 
+let's us run Docker with different OS system (including MacOS and Window).
