@@ -1,5 +1,0 @@
-
-1. Docker Tutorial for Beginner 1 hour
-* https://youtu.be/pg19Z8LL06w?si=UNm8QF6vnakAOozi
-2. How to write Dockerfile for Flask app 
-* https://www.freecodecamp.org/news/how-to-dockerize-a-flask-app/

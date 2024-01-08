@@ -1,9 +1,0 @@
-Question: What is Docker?
-
-Docker is the software that is used for helping install and operate 
-all requirement software package e.g. mySQL, npm, programming library etc. in your
-software project. It also pack all requirement software in one software package (similary to Python virtual environment), 
-so that it is more easily for manage.
-
-It make installing and operating software packages in different OS and cloud platform much easily. 
-In addition, you can operate different version of same software in Docker.
