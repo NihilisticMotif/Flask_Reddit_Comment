@@ -1,0 +1,5 @@
+# .gitignore
+/venv 
+
+Reference:
+* https://youtu.be/1Qk8jrBrp9o?si=E4wwLhnOnY0druDe

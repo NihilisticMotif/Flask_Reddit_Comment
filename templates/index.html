@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<!--
+https://stackoverflow.com/questions/46289486/how-do-you-declare-python-variables-within-flask-templates
+-->
+<h1>Reddit Post 3</h1>
+<button><a href="/?OrderBy=ABCDEZ">A-Z</a></button>
+<button><a href="/?OrderBy=ZYXWVA">Z-A</a></button>
+<button><a href="/?OrderBy=Likess">Like</a></button>
+<button><a href="/?OrderBy=Latest">Latest</a></button>
+<button><a href="/?OrderBy=Oldest">Oldest</a></button>
+<div class="commenteditor">
+<form action="/" method="POST">
+    <h3>Add Comment</h3>
+    <input class="input1" type="text" name="CommentInput">
+    <h3>Writer Name</h3>
+    <input class="input1" type="text" name="WriterInput">
+    <input class="input2" type="submit">
+</form>
+</div>
+
+{% for task in tasks %}
+<div class="comment">
+<div class="commentdiv UpdateInput">
+{% if task.id==SelectedKey|int and Mode=='U' %}
+    <h3>Original Comment</h3>
+    <h4>{{ task.comment }}</h4>
+    <h3>Update Comment</h3>
+    <form action="/update/{{task.id}}?OrderBy={{OrderBy}}" method="POST">
+        <input type="text" name="UpdateInput">
+        <input type="submit" value="Update">
+        <button><a href="/?OrderBy={{OrderBy}}&Key=0">Reset</a></button>
+    </form>
+{% else %}
+    <h4>{{ task.comment }}</h4>
+<button><a href="/?OrderBy={{OrderBy}}&Key={{task.id}}&Mode=U">Edit</a></button>
+{% endif %}
+</div>
+<div class="commentdata">
+<td>Writer: {{ task.writer }}</td>
+</div>
+<div class="commentdata">
+    <td>Like:_{{ task.like }}_
+        <form action="/like/{{ task.id }}?OrderBy={{ OrderBy }}&Dislike=0" method="POST">
+            <button type="submit">Like</button>
+        </form>
+    </td>
+    <td class="Nobody">______</td>
+    <td>Dislike:_{{ task.dislike }}_
+        <form action="/like/{{ task.id }}?OrderBy={{ OrderBy }}&Dislike=1" method="POST">
+            <button type="submit">Like</button>
+        </form>
+    </td>
+    <td class="Nobody">______</td>
+    <td>Date: {{ task.date_created }}</td>
+    <td class="Nobody">______</td>
+    <!--
+        # https://stackoverflow.com/questions/27786948/conditional-rendering-of-html-segment-using-render-template
+    -->
+    {% if task.id==SelectedKey|int and Mode=='D' %}
+    <td>Do you sure you want to delete 
+        <button><a href="/delete/{{task.id}}">Yes</a></button>
+        <button><a href="/?OrderBy={{OrderBy}}&Key=0">No</a></button>
+    </td>
+    {% else %}
+    <td><button><a href="/?OrderBy={{OrderBy}}&Key={{task.id}}&Mode=D">Delete</a></button></td>
+    {% endif %}
+    
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

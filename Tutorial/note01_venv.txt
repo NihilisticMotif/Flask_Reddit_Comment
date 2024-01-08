@@ -1,0 +1,2 @@
+(venv) imac@iMacs-iMac Flask % venv/bin/activate
+# Activating Python Virtual Environment

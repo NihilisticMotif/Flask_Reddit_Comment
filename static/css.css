@@ -1,0 +1,40 @@
+.comment{
+    border-top: 5px solid rgb(198, 54, 10);
+    margin-top:20px;
+    display:grid;
+}
+
+.commentdiv{
+    background-color: cadetblue;
+}
+
+.commentdata{
+    margin-top:10px;
+    display:flex;
+}
+
+.input1{
+    width:calc( 100% - 50px);
+    margin-top:10px;
+}
+.input2 {
+    width: 100px;
+    margin-top: 10px;
+}
+
+.Nobody{
+    visibility: hidden;
+    display:none;
+    width:30px;
+}
+
+.commenteditor{
+    background-color: rgb(174, 228, 13);
+    border-style: solid;
+    border-color: red;
+}
+
+.UpdateInput input{
+    width:700px;
+    height:30px
+}
